@@ -6,6 +6,7 @@
   "author": "Bunchhieng",
   "license": "MIT",
   "dependencies": {
+    "@project-serum/anchor": "^0.26.0",
     "@solana/web3.js": "^1.78.4",
     "@types/node": "^20.5.0",
     "bs58": "^5.0.0",
@@ -15,7 +16,8 @@
     "keygen": "ts-node ./keygen.ts",
     "airdrop": "ts-node ./airdrop.ts",
     "transfer": "ts-node ./transfer.ts",
-    "enroll": "ts.node ./enroll.ts"
+    "enroll": "ts-node ./enroll.ts",
+    "touint8array": "ts-node ./convertToUint8Array"
   },
   "devDependencies": {
     "ts-node": "^10.9.1"
