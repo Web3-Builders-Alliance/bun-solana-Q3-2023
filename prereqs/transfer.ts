@@ -7,7 +7,7 @@ import {
     PublicKey,
     sendAndConfirmTransaction
 } from "@solana/web3.js";
-import wallet from "./wba-wallet.json";
+import wallet from "../wba-wallet.json";
 
 const from = Keypair.fromSecretKey(new Uint8Array(wallet));
 const to = new PublicKey("ECPn7GDibga2hGzhQ5ew3cSQbSdk8gxEp42WR7F5DWVh");

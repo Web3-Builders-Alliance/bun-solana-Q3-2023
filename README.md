@@ -1,3 +1,3 @@
 Airdrop
 ========
-Web3 Alliance pre-req
+WBA Alliance Solana Assignment 

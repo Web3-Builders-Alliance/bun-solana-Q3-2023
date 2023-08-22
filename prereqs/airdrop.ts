@@ -3,7 +3,7 @@ import {
     Keypair,
     LAMPORTS_PER_SOL
 } from "@solana/web3.js";
-import wallet from "./wba-wallet.json";
+import wallet from "../wba-wallet.json";
 
 const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
 const connection = new Connection("https://api.devnet.solana.com");
