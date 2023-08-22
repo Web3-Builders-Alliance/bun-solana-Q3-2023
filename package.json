@@ -14,11 +14,12 @@
     "typescript": "^5.1.6"
   },
   "scripts": {
-    "keygen": "ts-node ./keygen.ts",
-    "airdrop": "ts-node ./airdrop.ts",
-    "transfer": "ts-node ./transfer.ts",
-    "enroll": "ts-node ./enroll.ts",
-    "touint8array": "ts-node ./convertToUint8Array"
+    "keygen": "ts-node ./prereqs/keygen.ts",
+    "airdrop": "ts-node ./prereqs/airdrop.ts",
+    "transfer": "ts-node ./prereqs/transfer.ts",
+    "enroll": "ts-node ./prereqs/enroll.ts",
+    "touint8array": "ts-node ./prereqs/convertToUint8Array",
+    "mint": "ts-node ./cluster1/spl_init.ts"
   },
   "devDependencies": {
     "ts-node": "^10.9.1"
