@@ -1,6 +1,16 @@
-import { Commitment, Connection, Keypair, PublicKey, Transaction, sendAndConfirmTransaction } from "@solana/web3.js"
+import {
+    Commitment,
+    Connection,
+    Keypair,
+    PublicKey,
+    Transaction,
+    sendAndConfirmTransaction
+} from "@solana/web3.js"
 import wallet from "../wba-wallet.json"
-import { createCreateMetadataAccountV2Instruction, createCreateMetadataAccountV3Instruction } from "@metaplex-foundation/mpl-token-metadata";
+import {
+    createCreateMetadataAccountV2Instruction,
+    createCreateMetadataAccountV3Instruction
+} from "@metaplex-foundation/mpl-token-metadata";
 
 // We're going to import our keypair from the wallet file
 const keypair = Keypair.fromSecretKey(new Uint8Array(wallet));
@@ -33,24 +43,25 @@ const [metadata_pda, _bump] = PublicKey.findProgramAddressSync(metadata_seeds, t
                 mintAuthority: keypair.publicKey,
                 payer: keypair.publicKey,
                 updateAuthority: keypair.publicKey
-            },
-                {
-                    createMetadataAccountArgsV3: {
-                        data: {
-                            name: "bunbunbun token",
-                            symbol: "BUN",
-                            uri: "bunbunbun.com",
-                            sellerFeeBasisPoints: 50,
-                            creators: [{
-                                address: keypair.publicKey, verified: true, share: 100
-                            }],
-                            collection: null,
-                            uses: null
-                        },
-                        isMutable: true,
-                        collectionDetails: null
-                    }
-                })
+            }, {
+                createMetadataAccountArgsV3: {
+                    data: {
+                        name: "bunbunbun token",
+                        symbol: "BUN",
+                        uri: "bunbunbun.com",
+                        sellerFeeBasisPoints: 50,
+                        creators: [{
+                            address: keypair.publicKey,
+                            verified: true,
+                            share: 100
+                        }],
+                        collection: null,
+                        uses: null
+                    },
+                    isMutable: true,
+                    collectionDetails: null
+                }
+            })
         );
 
         const txHash = await sendAndConfirmTransaction(connection, tx, [keypair]);
